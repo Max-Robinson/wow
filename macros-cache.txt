@@ -1,0 +1,15 @@
+MACRO 7 "Bandage" Spell_Shadow_SoulLeech_2
+/lazyscript Bandage
+END
+MACRO 8 "Charge" Ability_Warrior_Charge
+/lazyscript Charge
+END
+MACRO 4 "Cleave" Ability_Warrior_Cleave
+/lazyscript Cleave
+END
+MACRO 5 "SunderArmor" Ability_Warrior_Sunder
+/lazyscript SunderArmorHeroicStrike
+END
+MACRO 6 "ThunderClap" Spell_Nature_ThunderClap
+/lazyscript ThunderClap
+END
