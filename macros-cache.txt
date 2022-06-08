@@ -1,6 +1,9 @@
 MACRO 7 "Bandage" Spell_Shadow_SoulLeech_2
 /lazyscript Bandage
 END
+MACRO 9 "Buff" Spell_Nature_Strength
+/lazyscript Buff
+END
 MACRO 8 "Charge" Ability_Warrior_Charge
 /lazyscript Charge
 END
