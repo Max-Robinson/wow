@@ -18,7 +18,7 @@ lsConf = {
 			["Cantherle"] = {
 				["clearHistoryAfterCombat"] = false,
 				["initiateAutoAttack"] = true,
-				["mmIsVisible"] = true,
+				["showTargetCasts"] = true,
 				["defaultForm"] = "BattleCommon",
 				["minionIsVisible"] = true,
 				["showReasonForTargetCCd"] = true,
@@ -34,14 +34,6 @@ lsConf = {
 						["Befouled Water Elemental"] = true,
 					},
 				},
-				["showGankMessage"] = true,
-				["showTargetCasts"] = true,
-				["autoTarget"] = true,
-				["deathMinionIsVisible"] = true,
-				["minimapButtonPos"] = 257.7749767778977,
-				["minionHidesOutOfCombat"] = false,
-				["showActionAlways"] = true,
-				["useImmunities"] = true,
 				["forms"] = {
 					["ThunderClap"] = {
 						[1] = "callForm=BattleCommon",
@@ -60,10 +52,20 @@ lsConf = {
 						[9] = "sunder-ifTargetHasDebuff<5=sunder",
 						[10] = "heroicStrike",
 					},
-					["Cleave"] = {
-						[1] = "callForm=BattleCommon",
-						[2] = "# Cleave 20 rage",
-						[3] = "cleave-sayInSay=Cleave!-ifPlayer>45rage-ifPlayerHasBuff=battleShout",
+					["Buff"] = {
+						[1] = "findHerbs",
+						[2] = "use=Strong Troll's Blood Potion-ifNotPlayerHasBuffTitle=Regeneration",
+						[3] = "#use=Weak Troll's Blood Potion-ifNotPlayerHasBuffTitle=Regeneration",
+						[4] = "use=Elixir of Minor Fortitude-ifNotPlayerHasBuffTitle=Health",
+						[5] = "use=Elixir of Minor Defense-ifNotPlayerHasBuffTitle=Lesser Armor",
+						[6] = "use=Elixir of Lion's Strength-ifNotPlayerHasBuffTitle=Lesser Strength",
+						[7] = "callForm=EquipShield",
+						[8] = "applyMainHandBuff=Rough Weightstone-ifNotPlayerHasBuffTitle=Enhance Blunt Weapon",
+						[9] = "callForm=EquipTwoHandWeapon",
+						[10] = "applyMainHandBuff=Rough Sharpening Stone-ifNotPlayerHasBuffTitle=Sharpen Blade",
+						[11] = "use=Rumsey Rum Light-ifNotPlayerHasBuffTitle=Rumsey Rum Light",
+						[12] = "use=Crocolisk Gumbo-ifNotPlayerHasBuffTitle=Well Fed",
+						[13] = "#use=Goretusk Liver Pie-ifNotPlayerHasBuffTitle=Well Fed",
 					},
 					["Execute"] = {
 						[1] = "battle-sayInSay=Battle Stance!-ifNotStance=battle",
@@ -74,9 +76,13 @@ lsConf = {
 						[2] = "thunderClap-sayInSay=Thunder Clap!",
 					},
 					["BuffCheck"] = {
-						[1] = "sayInSay=Please Blessing of Might-ifNotPlayerHasBuff=blessMight",
-						[2] = "sayInSay=Please Thorns-ifNotPlayerHasBuff=thorns",
-						[3] = "sayInSay=Please Mark of the Wild-ifNotPlayerHasBuff=motw",
+						[1] = "sayInSay=Please Blessing of Might-ifNotPlayerHasBuff=blessMight-ifNotLastAction=say",
+						[2] = "sayInSay=Please Thorns-ifNotPlayerHasBuff=thorns-ifNotLastAction=say",
+						[3] = "sayInSay=Please Mark of the Wild-ifNotPlayerHasBuff=motw-ifNotLastAction=say",
+					},
+					["Shoot"] = {
+						[1] = "callForm=BuffCheck",
+						[2] = "gun",
 					},
 					["Overpower"] = {
 						[1] = "battle-sayInSay=Battle Stance!-ifNotStance=battle",
@@ -124,12 +130,10 @@ lsConf = {
 						[33] = "# Demoralizing Shout 10 rage",
 						[34] = "demoShout-ifPlayer>35rage-ifPlayerHasBuff=battleShout-ifNotTargetHasDebuff=demoShout",
 					},
-					["SunderArmorHeroicStrike"] = {
-						[1] = "callForm=BattleCommon",
-						[2] = "# Sunder Armor 15 rage",
-						[3] = "sunder-ifPlayer>40rage-ifPlayerHasBuff=battleShout-ifTargetHasDebuff<5=sunder",
-						[4] = "# Heroic Strike 15 rage",
-						[5] = "heroicStrike-sayInSay=Heroic Strike!-ifPlayer>40rage-ifTargetHasDebuff>5=sunder",
+					["Hamstring"] = {
+						[1] = "# Only switch stance to perform a Hamstring if rage is 25 or less.  Not worth losing rage to perform a Hamstring (in PvE)",
+						[2] = "battle-sayInSay=Battle Stance!-ifNotStance=battle-ifPlayer<25rage",
+						[3] = "hamstring-sayInSay=Hamstring!-ifStance=battle",
 					},
 					["MockingBlowTaunt"] = {
 						[1] = "# Mocking Blow 10 rage 2min cooldown",
@@ -138,28 +142,20 @@ lsConf = {
 						[4] = "defensive-sayInSay=Defensive Stance!-ifNotStance=defensive-ifInCooldown=mockingBlow-ifNotInCooldown=taunt",
 						[5] = "taunt-sayInSay=Taunt!-ifNotInCooldown=taunt-ifStance=defensive",
 					},
-					["Buff"] = {
-						[1] = "findHerbs",
-						[2] = "use=Strong Troll's Blood Potion-ifNotPlayerHasBuffTitle=Regeneration",
-						[3] = "#use=Weak Troll's Blood Potion-ifNotPlayerHasBuffTitle=Regeneration",
-						[4] = "use=Elixir of Minor Fortitude-ifNotPlayerHasBuffTitle=Health",
-						[5] = "use=Elixir of Minor Defense-ifNotPlayerHasBuffTitle=Lesser Armor",
-						[6] = "use=Elixir of Lion's Strength-ifNotPlayerHasBuffTitle=Lesser Strength",
-						[7] = "callForm=EquipShield",
-						[8] = "applyMainHandBuff=Rough Weightstone-ifNotPlayerHasBuffTitle=Enhance Blunt Weapon",
-						[9] = "callForm=EquipTwoHandWeapon",
-						[10] = "applyMainHandBuff=Rough Sharpening Stone-ifNotPlayerHasBuffTitle=Sharpen Blade",
-						[11] = "use=Rumsey Rum Light-ifNotPlayerHasBuffTitle=Rumsey Rum Light",
-						[12] = "use=Crocolisk Gumbo-ifNotPlayerHasBuffTitle=Well Fed",
-						[13] = "#use=Goretusk Liver Pie-ifNotPlayerHasBuffTitle=Well Fed",
+					["Retaliation"] = {
+						[1] = "battle-sayInSay=Battle Stance!-ifNotStance=battle",
+						[2] = "retaliation-sayInSay=Retaliation!",
 					},
-					["Bandage"] = {
-						[1] = "targetUnit=player-use=Heavy Wool Bandage-targetLast-sayInSay=Bandaging!-ifNotPlayerHasDebuff=recentlyBandaged",
+					["Cleave"] = {
+						[1] = "callForm=BattleCommon",
+						[2] = "# Cleave 20 rage",
+						[3] = "cleave-sayInSay=Cleave!-ifPlayer>45rage-ifPlayerHasBuff=battleShout",
 					},
-					["Hamstring"] = {
-						[1] = "# Only switch stance to perform a Hamstring if rage is 25 or less.  Not worth losing rage to perform a Hamstring (in PvE)",
-						[2] = "battle-sayInSay=Battle Stance!-ifNotStance=battle-ifPlayer<25rage",
-						[3] = "hamstring-sayInSay=Hamstring!-ifStance=battle",
+					["Charge"] = {
+						[1] = "callForm=BuffCheck",
+						[2] = "sayInSay=Charge in cooldown-ifInCooldown=charge",
+						[3] = "battle-sayInSay=Battle Stance!-ifNotInCooldown=charge-ifNotStance=battle",
+						[4] = "charge-ifNotInCooldown=charge",
 					},
 					["Revenge"] = {
 						[1] = "defensive-sayInSay=Defensive Stance!-ifNotStance=defensive-ifNotInCooldown=revenge",
@@ -173,22 +169,30 @@ lsConf = {
 					["EquipTwoHandWeapon"] = {
 						[1] = "equipMainHand=Onyx Claymore-ifNotEquipped=Onyx Claymore",
 					},
-					["Charge"] = {
-						[1] = "callForm=BuffCheck",
-						[2] = "sayInSay=Charge in cooldown-ifInCooldown=charge",
-						[3] = "battle-sayInSay=Battle Stance!-ifNotInCooldown=charge-ifNotStance=battle",
-						[4] = "charge-ifNotInCooldown=charge",
+					["SunderArmorHeroicStrike"] = {
+						[1] = "callForm=BattleCommon",
+						[2] = "# Sunder Armor 15 rage",
+						[3] = "sunder-ifPlayer>40rage-ifPlayerHasBuff=battleShout-ifTargetHasDebuff<5=sunder",
+						[4] = "# Heroic Strike 15 rage",
+						[5] = "heroicStrike-sayInSay=Heroic Strike!-ifPlayer>40rage-ifTargetHasDebuff>5=sunder",
 					},
 					["ShieldBlock"] = {
 						[1] = "defensive-sayInSay=Defensive Stance!-ifNotStance=defensive",
 						[2] = "callForm=EquipShield",
 						[3] = "shieldBlock-sayInSay=Shield Block!",
 					},
-					["Retaliation"] = {
-						[1] = "battle-sayInSay=Battle Stance!-ifNotStance=battle",
-						[2] = "retaliation-sayInSay=Retaliation!",
+					["Bandage"] = {
+						[1] = "targetUnit=player-use=Heavy Wool Bandage-targetLast-sayInSay=Bandaging!-ifNotPlayerHasDebuff=recentlyBandaged",
 					},
 				},
+				["useImmunities"] = true,
+				["autoTarget"] = true,
+				["showGankMessage"] = true,
+				["showActionAlways"] = true,
+				["minimapButtonPos"] = 257.7749767778977,
+				["minionHidesOutOfCombat"] = false,
+				["mmIsVisible"] = true,
+				["deathMinionIsVisible"] = true,
 			},
 		},
 	},
