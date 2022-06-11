@@ -18,7 +18,7 @@ lsConf = {
 			["Cantherle"] = {
 				["clearHistoryAfterCombat"] = false,
 				["initiateAutoAttack"] = true,
-				["showTargetCasts"] = true,
+				["mmIsVisible"] = true,
 				["defaultForm"] = "BattleCommon",
 				["minionIsVisible"] = true,
 				["showReasonForTargetCCd"] = true,
@@ -34,6 +34,14 @@ lsConf = {
 						["Befouled Water Elemental"] = true,
 					},
 				},
+				["showGankMessage"] = true,
+				["showTargetCasts"] = true,
+				["autoTarget"] = true,
+				["deathMinionIsVisible"] = true,
+				["minimapButtonPos"] = 257.7749767778977,
+				["minionHidesOutOfCombat"] = false,
+				["showActionAlways"] = true,
+				["useImmunities"] = true,
 				["forms"] = {
 					["ThunderClap"] = {
 						[1] = "callForm=BattleCommon",
@@ -142,14 +150,15 @@ lsConf = {
 						[4] = "defensive-sayInSay=Defensive Stance!-ifNotStance=defensive-ifInCooldown=mockingBlow-ifNotInCooldown=taunt",
 						[5] = "taunt-sayInSay=Taunt!-ifNotInCooldown=taunt-ifStance=defensive",
 					},
-					["Retaliation"] = {
-						[1] = "battle-sayInSay=Battle Stance!-ifNotStance=battle",
-						[2] = "retaliation-sayInSay=Retaliation!",
-					},
-					["Cleave"] = {
+					["SunderArmorHeroicStrike"] = {
 						[1] = "callForm=BattleCommon",
-						[2] = "# Cleave 20 rage",
-						[3] = "cleave-sayInSay=Cleave!-ifPlayer>45rage-ifPlayerHasBuff=battleShout",
+						[2] = "# Sunder Armor 15 rage",
+						[3] = "sunder-ifPlayer>40rage-ifPlayerHasBuff=battleShout-ifTargetHasDebuff<5=sunder",
+						[4] = "# Heroic Strike 15 rage",
+						[5] = "heroicStrike-sayInSay=Heroic Strike!-ifPlayer>40rage-ifTargetHasDebuff>5=sunder",
+					},
+					["Bandage"] = {
+						[1] = "targetUnit=player-use=Heavy Wool Bandage-targetLast-sayInSay=Bandaging!-ifNotPlayerHasDebuff=recentlyBandaged",
 					},
 					["Charge"] = {
 						[1] = "callForm=BuffCheck",
@@ -169,30 +178,21 @@ lsConf = {
 					["EquipTwoHandWeapon"] = {
 						[1] = "equipMainHand=Onyx Claymore-ifNotEquipped=Onyx Claymore",
 					},
-					["SunderArmorHeroicStrike"] = {
-						[1] = "callForm=BattleCommon",
-						[2] = "# Sunder Armor 15 rage",
-						[3] = "sunder-ifPlayer>40rage-ifPlayerHasBuff=battleShout-ifTargetHasDebuff<5=sunder",
-						[4] = "# Heroic Strike 15 rage",
-						[5] = "heroicStrike-sayInSay=Heroic Strike!-ifPlayer>40rage-ifTargetHasDebuff>5=sunder",
+					["Retaliation"] = {
+						[1] = "battle-sayInSay=Battle Stance!-ifNotStance=battle",
+						[2] = "retaliation-sayInSay=Retaliation!",
 					},
 					["ShieldBlock"] = {
 						[1] = "defensive-sayInSay=Defensive Stance!-ifNotStance=defensive",
 						[2] = "callForm=EquipShield",
 						[3] = "shieldBlock-sayInSay=Shield Block!",
 					},
-					["Bandage"] = {
-						[1] = "targetUnit=player-use=Heavy Wool Bandage-targetLast-sayInSay=Bandaging!-ifNotPlayerHasDebuff=recentlyBandaged",
+					["Cleave"] = {
+						[1] = "callForm=BattleCommon",
+						[2] = "# Cleave 20 rage",
+						[3] = "cleave-sayInSay=Cleave!-ifPlayer>45rage-ifPlayerHasBuff=battleShout",
 					},
 				},
-				["useImmunities"] = true,
-				["autoTarget"] = true,
-				["showGankMessage"] = true,
-				["showActionAlways"] = true,
-				["minimapButtonPos"] = 257.7749767778977,
-				["minionHidesOutOfCombat"] = false,
-				["mmIsVisible"] = true,
-				["deathMinionIsVisible"] = true,
 			},
 		},
 	},
