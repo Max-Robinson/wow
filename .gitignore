@@ -4,5 +4,6 @@
 # But not these files...
 !.gitignore
 !SavedVariables/Auctioneer.lua
+!SavedVariables/aux-addon.lua
 !Turtle WoW/Cantherle/SavedVariables/LazyScript.lua
 !macros-cache.txt
