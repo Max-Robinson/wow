@@ -111,10 +111,23 @@ lsConf = {
 						[36] = "# Demoralizing Shout 10 rage",
 						[37] = "demoShout-sayInSay=Demoralizing Shout!-ifPlayer>35rage-ifPlayerHasBuff=battleShout-ifNotTargetHasDebuff=demoShout",
 					},
-					["Hamstring"] = {
-						[1] = "# Only switch stance to perform a Hamstring if rage is 25 or less.  Not worth losing rage to perform a Hamstring (in PvE)",
-						[2] = "battle-sayInSay=Battle Stance!-ifNotStance=battle-ifPlayer<25rage",
-						[3] = "hamstring-sayInSay=Hamstring!-ifStance=battle",
+					["SunderArmorHeroicStrike"] = {
+						[1] = "callForm=BattleCommon",
+						[2] = "# Sunder Armor 15 rage",
+						[3] = "sunder-sayInSay=Sunder Armor!-ifPlayer>40rage-ifPlayerHasBuff=battleShout-ifTargetHasDebuff<5=sunder",
+						[4] = "# Heroic Strike 15 rage",
+						[5] = "heroicStrike-sayInSay=Heroic Strike!-ifPlayer>40rage-ifTargetHasDebuff>5=sunder",
+					},
+					["Disarm"] = {
+						[1] = "disarm-sayInSay=Disarm!-ifTargetBoss",
+						[2] = "disarm-sayInSay=Disarm!-ifTargetElite",
+					},
+					["MockingBlowTaunt"] = {
+						[1] = "# Mocking Blow 10 rage 2min cooldown",
+						[2] = "mockingBlow-sayInSay=Mocking Blow!-ifStance=battle-ifPlayer>10rage-ifNotInCooldown=mockingBlow",
+						[3] = "# Taunt 0 rage",
+						[4] = "defensive-sayInSay=Defensive Stance!-ifNotStance=defensive-ifInCooldown=mockingBlow-ifNotInCooldown=taunt",
+						[5] = "taunt-sayInSay=Taunt!-ifNotInCooldown=taunt-ifStance=defensive",
 					},
 					["Buff"] = {
 						[1] = "findHerbs",
@@ -130,17 +143,6 @@ lsConf = {
 						[11] = "use=Rumsey Rum Light-ifNotPlayerHasBuffTitle=Rumsey Rum Light",
 						[12] = "use=Crocolisk Gumbo-ifNotPlayerHasBuffTitle=Well Fed",
 						[13] = "#use=Goretusk Liver Pie-ifNotPlayerHasBuffTitle=Well Fed",
-					},
-					["MockingBlowTaunt"] = {
-						[1] = "# Mocking Blow 10 rage 2min cooldown",
-						[2] = "mockingBlow-sayInSay=Mocking Blow!-ifStance=battle-ifPlayer>10rage-ifNotInCooldown=mockingBlow",
-						[3] = "# Taunt 0 rage",
-						[4] = "defensive-sayInSay=Defensive Stance!-ifNotStance=defensive-ifInCooldown=mockingBlow-ifNotInCooldown=taunt",
-						[5] = "taunt-sayInSay=Taunt!-ifNotInCooldown=taunt-ifStance=defensive",
-					},
-					["Disarm"] = {
-						[1] = "disarm-sayInSay=Disarm!-ifTargetBoss",
-						[2] = "disarm-sayInSay=Disarm!-ifTargetElite",
 					},
 					["tank"] = {
 						[1] = "berserkerRage-ifPlayerIs=Feared",
@@ -170,20 +172,18 @@ lsConf = {
 					["EquipTwoHandWeapon"] = {
 						[1] = "equipMainHand=Onyx Claymore-sayInSay=Equipping 2 hander-ifNotEquipped=Onyx Claymore",
 					},
-					["SunderArmorHeroicStrike"] = {
-						[1] = "callForm=BattleCommon",
-						[2] = "# Sunder Armor 15 rage",
-						[3] = "sunder-sayInSay=Sunder Armor!-ifPlayer>40rage-ifPlayerHasBuff=battleShout-ifTargetHasDebuff<5=sunder",
-						[4] = "# Heroic Strike 15 rage",
-						[5] = "heroicStrike-sayInSay=Heroic Strike!-ifPlayer>40rage-ifTargetHasDebuff>5=sunder",
+					["Bandage"] = {
+						[1] = "targetUnit=player-use=Heavy Wool Bandage-targetLast-sayInSay=Bandaging!-ifNotPlayerHasDebuff=recentlyBandaged",
 					},
 					["ShieldBlock"] = {
 						[1] = "callForm=EquipShield",
 						[2] = "defensive-sayInSay=Defensive Stance!-ifNotStance=defensive",
 						[3] = "shieldBlock-sayInSay=Shield Block!",
 					},
-					["Bandage"] = {
-						[1] = "targetUnit=player-use=Heavy Wool Bandage-targetLast-sayInSay=Bandaging!-ifNotPlayerHasDebuff=recentlyBandaged",
+					["Hamstring"] = {
+						[1] = "# Only switch stance to perform a Hamstring if rage is 25 or less.  Not worth losing rage to perform a Hamstring (in PvE)",
+						[2] = "battle-sayInSay=Battle Stance!-ifNotStance=battle-ifPlayer<25rage",
+						[3] = "hamstring-sayInSay=Hamstring!-ifStance=battle",
 					},
 				},
 				["deathMinionIsVisible"] = true,
