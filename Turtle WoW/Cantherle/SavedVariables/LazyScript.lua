@@ -18,7 +18,7 @@ lsConf = {
 			["Cantherle"] = {
 				["clearHistoryAfterCombat"] = false,
 				["initiateAutoAttack"] = true,
-				["showTargetCasts"] = true,
+				["mmIsVisible"] = true,
 				["defaultForm"] = "BattleCommon",
 				["minionIsVisible"] = true,
 				["showReasonForTargetCCd"] = true,
@@ -28,26 +28,53 @@ lsConf = {
 				["loadedDefaultForms"] = true,
 				["debug"] = false,
 				["healthHistorySize"] = 5,
+				["Immunities"] = {
+					["Rend"] = {
+						["Sneed's Shredder"] = true,
+						["Remote-Controlled Golem"] = true,
+						["Apprentice Training Dummy"] = true,
+						["Befouled Water Elemental"] = true,
+					},
+					["Intimidating Shout"] = {
+						["Remote-Controlled Golem"] = true,
+						["Mr. Smite"] = true,
+						["Gilnid"] = true,
+					},
+				},
+				["showGankMessage"] = true,
+				["showTargetCasts"] = true,
+				["autoTarget"] = true,
+				["deathMinionIsVisible"] = true,
+				["minimapButtonPos"] = 257.7749767778977,
+				["minionHidesOutOfCombat"] = false,
+				["showActionAlways"] = true,
+				["useImmunities"] = true,
 				["forms"] = {
 					["ThunderClap"] = {
 						[1] = "callForm=BattleCommon",
 						[2] = "# Thunder Clap 20 rage",
 						[3] = "callForm=ThunderClapSub-ifPlayer>45rage-ifPlayerHasBuff=battleShout-ifNotInCooldown=thunderClap-ifNotTargetHasDebuff=thunderClap",
 					},
-					["Charge"] = {
-						[1] = "callForm=BuffCheck",
-						[2] = "sayInSay=Charge in cooldown-ifInCooldown=charge",
-						[3] = "battle-sayInSay=Battle Stance!-ifNotInCooldown=charge-ifNotStance=battle",
-						[4] = "charge-ifNotInCooldown=charge",
+					["tank"] = {
+						[1] = "berserkerRage-ifPlayerIs=Feared",
+						[2] = "use=Major Healing Potion-ifInCombat-ifPlayer<10%hp",
+						[3] = "battleShout-ifNotInCombat-ifNotHistory<5=battleShout",
+						[4] = "stopAll-ifTargetIs=CCd",
+						[5] = "taunt-ifNotTargetOfTarget-ifTargetHasTarget",
+						[6] = "mockingBlow-ifNotTargetOfTarget-ifTargetHasTarget",
+						[7] = "battleShout-ifNotPlayerHasBuff=battleShout",
+						[8] = "demoShout-ifNotTargetHasDebuff=demoShout",
+						[9] = "sunder-ifTargetHasDebuff<5=sunder",
+						[10] = "heroicStrike",
 					},
 					["Cleave"] = {
 						[1] = "callForm=BattleCommon",
 						[2] = "# Cleave 20 rage",
 						[3] = "cleave-sayInSay=Cleave!-ifPlayer>45rage-ifPlayerHasBuff=battleShout",
 					},
-					["Execute"] = {
-						[1] = "battle-sayInSay=Battle Stance!-ifNotStance=battle",
-						[2] = "execute-sayInSay=Execute!",
+					["Disarm"] = {
+						[1] = "disarm-sayInSay=Disarm!-ifTargetBoss",
+						[2] = "disarm-sayInSay=Disarm!-ifTargetElite",
 					},
 					["ThunderClapSub"] = {
 						[1] = "battle-sayInSay=Battle Stance!-ifNotStance=battle",
@@ -111,16 +138,14 @@ lsConf = {
 						[36] = "# Demoralizing Shout 10 rage",
 						[37] = "demoShout-sayInSay=Demoralizing Shout!-ifPlayer>35rage-ifPlayerHasBuff=battleShout-ifNotTargetHasDebuff=demoShout",
 					},
-					["SunderArmorHeroicStrike"] = {
-						[1] = "callForm=BattleCommon",
-						[2] = "# Sunder Armor 15 rage",
-						[3] = "sunder-sayInSay=Sunder Armor!-ifPlayer>40rage-ifPlayerHasBuff=battleShout-ifTargetHasDebuff<5=sunder",
-						[4] = "# Heroic Strike 15 rage",
-						[5] = "heroicStrike-sayInSay=Heroic Strike!-ifPlayer>40rage-ifTargetHasDebuff>5=sunder",
+					["Hamstring"] = {
+						[1] = "# Only switch stance to perform a Hamstring if rage is 25 or less.  Not worth losing rage to perform a Hamstring (in PvE)",
+						[2] = "battle-sayInSay=Battle Stance!-ifNotStance=battle-ifPlayer<25rage",
+						[3] = "hamstring-sayInSay=Hamstring!-ifStance=battle",
 					},
-					["Disarm"] = {
-						[1] = "disarm-sayInSay=Disarm!-ifTargetBoss",
-						[2] = "disarm-sayInSay=Disarm!-ifTargetElite",
+					["Execute"] = {
+						[1] = "battle-sayInSay=Battle Stance!-ifNotStance=battle",
+						[2] = "execute-sayInSay=Execute!",
 					},
 					["MockingBlowTaunt"] = {
 						[1] = "# Mocking Blow 10 rage 2min cooldown",
@@ -144,17 +169,11 @@ lsConf = {
 						[12] = "use=Crocolisk Gumbo-ifNotPlayerHasBuffTitle=Well Fed",
 						[13] = "#use=Goretusk Liver Pie-ifNotPlayerHasBuffTitle=Well Fed",
 					},
-					["tank"] = {
-						[1] = "berserkerRage-ifPlayerIs=Feared",
-						[2] = "use=Major Healing Potion-ifInCombat-ifPlayer<10%hp",
-						[3] = "battleShout-ifNotInCombat-ifNotHistory<5=battleShout",
-						[4] = "stopAll-ifTargetIs=CCd",
-						[5] = "taunt-ifNotTargetOfTarget-ifTargetHasTarget",
-						[6] = "mockingBlow-ifNotTargetOfTarget-ifTargetHasTarget",
-						[7] = "battleShout-ifNotPlayerHasBuff=battleShout",
-						[8] = "demoShout-ifNotTargetHasDebuff=demoShout",
-						[9] = "sunder-ifTargetHasDebuff<5=sunder",
-						[10] = "heroicStrike",
+					["Charge"] = {
+						[1] = "callForm=BuffCheck",
+						[2] = "sayInSay=Charge in cooldown-ifInCooldown=charge",
+						[3] = "battle-sayInSay=Battle Stance!-ifNotInCooldown=charge-ifNotStance=battle",
+						[4] = "charge-ifNotInCooldown=charge",
 					},
 					["Retaliation"] = {
 						[1] = "battle-sayInSay=Battle Stance!-ifNotStance=battle",
@@ -172,39 +191,20 @@ lsConf = {
 					["EquipTwoHandWeapon"] = {
 						[1] = "equipMainHand=Onyx Claymore-sayInSay=Equipping 2 hander-ifNotEquipped=Onyx Claymore",
 					},
-					["Bandage"] = {
-						[1] = "targetUnit=player-use=Heavy Wool Bandage-targetLast-sayInSay=Bandaging!-ifNotPlayerHasDebuff=recentlyBandaged",
+					["SunderArmorHeroicStrike"] = {
+						[1] = "callForm=BattleCommon",
+						[2] = "# Sunder Armor 15 rage",
+						[3] = "sunder-sayInSay=Sunder Armor!-ifPlayer>40rage-ifPlayerHasBuff=battleShout-ifTargetHasDebuff<5=sunder",
+						[4] = "# Heroic Strike 15 rage",
+						[5] = "heroicStrike-sayInSay=Heroic Strike!-ifPlayer>40rage-ifTargetHasDebuff>5=sunder",
 					},
 					["ShieldBlock"] = {
 						[1] = "callForm=EquipShield",
 						[2] = "defensive-sayInSay=Defensive Stance!-ifNotStance=defensive",
 						[3] = "shieldBlock-sayInSay=Shield Block!",
 					},
-					["Hamstring"] = {
-						[1] = "# Only switch stance to perform a Hamstring if rage is 25 or less.  Not worth losing rage to perform a Hamstring (in PvE)",
-						[2] = "battle-sayInSay=Battle Stance!-ifNotStance=battle-ifPlayer<25rage",
-						[3] = "hamstring-sayInSay=Hamstring!-ifStance=battle",
-					},
-				},
-				["deathMinionIsVisible"] = true,
-				["mmIsVisible"] = true,
-				["autoTarget"] = true,
-				["showGankMessage"] = true,
-				["minionHidesOutOfCombat"] = false,
-				["minimapButtonPos"] = 257.7749767778977,
-				["showActionAlways"] = true,
-				["useImmunities"] = true,
-				["Immunities"] = {
-					["Rend"] = {
-						["Sneed's Shredder"] = true,
-						["Remote-Controlled Golem"] = true,
-						["Apprentice Training Dummy"] = true,
-						["Befouled Water Elemental"] = true,
-					},
-					["Intimidating Shout"] = {
-						["Remote-Controlled Golem"] = true,
-						["Mr. Smite"] = true,
-						["Gilnid"] = true,
+					["Bandage"] = {
+						[1] = "targetUnit=player-use=Heavy Wool Bandage-targetLast-sayInSay=Bandaging!-ifNotPlayerHasDebuff=recentlyBandaged",
 					},
 				},
 			},
