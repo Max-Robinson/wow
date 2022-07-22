@@ -85,7 +85,7 @@ lsConf = {
 						[1] = "# If holding two-handed weapon, and try to equip shield, it will fail.",
 						[2] = "# Must first equip one-handed weapon, then can equip shield.",
 						[3] = "equipMainHand=Iridescent Hammer-ifNotEquipped=Iridescent Hammer",
-						[4] = "equipOffHand=Battleforge Shield of Strength-echo=Equipping shield-ifNotEquipped=Battleforge Shield of Strength",
+						[4] = "equipOffHand=Sentry's Shield of the Bear-echo=Equipping shield-ifNotEquipped=Sentry's Shield of the Bear",
 					},
 					["BattleCommon"] = {
 						[1] = "autoAttack",
@@ -103,7 +103,7 @@ lsConf = {
 						[13] = "# Execute 15 rage",
 						[14] = "callForm=Execute-ifTarget<20%hp-ifPlayer>15rage",
 						[15] = "# Shield Bash 10 rage",
-						[16] = "callForm=ShieldBash-ifNotInCooldown=shieldBash-ifTargetIsCasting-ifNotTargetIs=Stunned-ifPlayer>10rage",
+						[16] = "callForm=ShieldBash-ifNotInCooldown=shieldBash-ifTargetIsCasting=Sleep,Druid's Slumber-ifNotTargetIs=Stunned-ifPlayer>10rage",
 						[17] = "#Overpower 5 rage",
 						[18] = "callForm=Overpower-ifPlayer>5rage-ifNotInCooldown=overpower-ifTargetDodged",
 						[19] = "# Revenge 5 rage",
@@ -190,10 +190,12 @@ lsConf = {
 				},
 				["Immunities"] = {
 					["Rend"] = {
+						["Verdan the Everliving"] = true,
 						["Sneed's Shredder"] = true,
-						["Remote-Controlled Golem"] = true,
 						["Apprentice Training Dummy"] = true,
 						["Befouled Water Elemental"] = true,
+						["Deviate Shambler"] = true,
+						["Remote-Controlled Golem"] = true,
 						["Burning Destroyer"] = true,
 					},
 					["Intimidating Shout"] = {

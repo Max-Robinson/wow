@@ -27,6 +27,9 @@ lsConf = {
 				["loadedDefaultForms"] = true,
 				["debug"] = false,
 				["healthHistorySize"] = 5,
+				["Immunities"] = {
+				},
+				["useImmunities"] = true,
 				["forms"] = {
 					["OhShit"] = {
 						[1] = "pws@self-ifNotHasBuff=pws-ifNotHasDebuff=weakenedSoul",
@@ -83,16 +86,13 @@ lsConf = {
 						[23] = "#fearWard@partypet4-ifNotPartypet4HasBuff=fearWard",
 					},
 				},
-				["showGankMessage"] = false,
-				["showTargetCasts"] = false,
 				["autoTarget"] = true,
 				["deathMinionIsVisible"] = false,
-				["minionHidesOutOfCombat"] = false,
+				["showTargetCasts"] = false,
 				["minimapButtonPos"] = 0,
+				["minionHidesOutOfCombat"] = false,
 				["mmIsVisible"] = true,
-				["Immunities"] = {
-				},
-				["useImmunities"] = true,
+				["showGankMessage"] = false,
 			},
 		},
 	},
