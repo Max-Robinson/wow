@@ -18,7 +18,7 @@ lsConf = {
 			["Galilea"] = {
 				["clearHistoryAfterCombat"] = false,
 				["initiateAutoAttack"] = true,
-				["showActionAlways"] = true,
+				["mmIsVisible"] = true,
 				["minionIsVisible"] = true,
 				["showReasonForTargetCCd"] = false,
 				["BoundFormsTable"] = {
@@ -27,9 +27,6 @@ lsConf = {
 				["loadedDefaultForms"] = true,
 				["debug"] = false,
 				["healthHistorySize"] = 5,
-				["Immunities"] = {
-				},
-				["useImmunities"] = true,
 				["forms"] = {
 					["OhShit"] = {
 						[1] = "pws@self-ifNotHasBuff=pws-ifNotHasDebuff=weakenedSoul",
@@ -86,12 +83,15 @@ lsConf = {
 						[23] = "#fearWard@partypet4-ifNotPartypet4HasBuff=fearWard",
 					},
 				},
+				["useImmunities"] = true,
+				["Immunities"] = {
+				},
 				["autoTarget"] = true,
 				["deathMinionIsVisible"] = false,
-				["showTargetCasts"] = false,
-				["minimapButtonPos"] = 0,
+				["showActionAlways"] = true,
 				["minionHidesOutOfCombat"] = false,
-				["mmIsVisible"] = true,
+				["minimapButtonPos"] = 0,
+				["showTargetCasts"] = false,
 				["showGankMessage"] = false,
 			},
 		},
