@@ -18,7 +18,7 @@ lsConf = {
 			["Galilea"] = {
 				["clearHistoryAfterCombat"] = false,
 				["initiateAutoAttack"] = true,
-				["mmIsVisible"] = true,
+				["showActionAlways"] = true,
 				["minionIsVisible"] = true,
 				["showReasonForTargetCCd"] = false,
 				["BoundFormsTable"] = {
@@ -27,11 +27,19 @@ lsConf = {
 				["loadedDefaultForms"] = true,
 				["debug"] = false,
 				["healthHistorySize"] = 5,
+				["Immunities"] = {
+				},
+				["showGankMessage"] = false,
+				["showTargetCasts"] = false,
+				["autoTarget"] = true,
+				["deathMinionIsVisible"] = false,
+				["minimapButtonPos"] = 0,
+				["minionHidesOutOfCombat"] = false,
+				["mmIsVisible"] = true,
 				["forms"] = {
-					["OhShit"] = {
-						[1] = "pws@self-ifNotHasBuff=pws-ifNotHasDebuff=weakenedSoul",
-						[2] = "pws@self-ifPlayer<40%hp-ifNotHasBuff=pws-ifNotHasDebuff=weakenedSoul",
-						[3] = "flashHeal@self-ifPlayer>125mana- ifPlayer>237hpDeficit",
+					["Shoot"] = {
+						[1] = "callForm=OhShit",
+						[2] = "wand",
 					},
 					["lowbie"] = {
 						[1] = "stop-ifCasting",
@@ -56,6 +64,11 @@ lsConf = {
 						[20] = "stopWand-ifPlayer<40%hp",
 						[21] = "wand-ifTarget<50%hp",
 						[22] = "wand-ifPlayer<40%mana",
+					},
+					["OhShit"] = {
+						[1] = "#pws@self-ifNotHasBuff=pws-ifNotHasDebuff=weakenedSoul",
+						[2] = "pws@self-ifPlayer<40%hp-ifNotHasBuff=pws-ifNotHasDebuff=weakenedSoul",
+						[3] = "flashHeal@self-ifPlayer>125mana-ifPlayer>237hpDeficit",
 					},
 					["Buff"] = {
 						[1] = "#pwf-ifNotTargetHasBuff=pwf-ifHaveTarget",
@@ -84,15 +97,6 @@ lsConf = {
 					},
 				},
 				["useImmunities"] = true,
-				["Immunities"] = {
-				},
-				["autoTarget"] = true,
-				["deathMinionIsVisible"] = false,
-				["showActionAlways"] = true,
-				["minionHidesOutOfCombat"] = false,
-				["minimapButtonPos"] = 0,
-				["showTargetCasts"] = false,
-				["showGankMessage"] = false,
 			},
 		},
 	},
