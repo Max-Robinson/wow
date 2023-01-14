@@ -5,7 +5,7 @@ MACRO 9 "Buff" Spell_Nature_Strength
 /lazyscript Buff
 END
 MACRO 8 "Charge" Ability_Warrior_Charge
-/lazyscript Charge
+/lazyscript ChargeIntercept
 END
 MACRO 4 "Cleave" Ability_Warrior_Cleave
 /lazyscript Cleave
