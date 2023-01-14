@@ -1,4 +1,4 @@
-MACRO 7 "Bandage" Spell_Shadow_SoulLeech_2
+MACRO 7 "Bandage" Spell_Holy_SealOfSacrifice
 /lazyscript Bandage
 END
 MACRO 9 "Buff" Spell_Nature_Strength
