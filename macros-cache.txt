@@ -10,6 +10,9 @@ END
 MACRO 4 "Cleave" Ability_Warrior_Cleave
 /lazyscript Cleave
 END
+MACRO 10 "Retaliation" Ability_Warrior_Challange
+/lazyscript Retaliation
+END
 MACRO 5 "SunderArmor" Ability_Warrior_Sunder
 /lazyscript SunderArmorHeroicStrike
 END
