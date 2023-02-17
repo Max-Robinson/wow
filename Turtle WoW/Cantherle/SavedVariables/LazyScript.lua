@@ -91,14 +91,14 @@ lsConf = {
 						[10] = "sweepingStrikes-echo=Sweeping Strikes!-ifStance=battle-ifPlayer>30rage-ifNotInCooldown=sweepingStrikes-ifNotLastAction=sweepingStrikes",
 					},
 					["Overpower"] = {
-						[1] = "battle-echo=Battle Stance for Overpower!-ifStance=defensive",
-						[2] = "battle-echo=Battle Stance for Overpower!-ifStance=berserk-ifPlayer<25rage",
-						[3] = "overpower-sayInSay=Overpower!",
+						[1] = "battle-echo=Battle Stance for Overpower!-ifStance=defensive-ifNotLastAction=battle",
+						[2] = "battle-echo=Battle Stance for Overpower!-ifStance=berserk-ifPlayer<25rage-ifNotLastAction=battle",
+						[3] = "overpower-sayInSay=Overpower-ifNotLastAction=overpower!",
 					},
 					["EquipShield"] = {
 						[1] = "# If holding two-handed weapon, and try to equip shield, it will fail.",
 						[2] = "# Must first equip one-handed weapon, then can equip shield.",
-						[3] = "equipMainHand=Reforged Blade of Heroes-ifNotEquipped=Reforged Blade of Heroes",
+						[3] = "equipMainHand=Dwarf Captain's Sword-ifNotEquipped=Dwarf Captain's Sword",
 						[4] = "equipOffHand=Salbac Shield-echo=Equipping shield-ifNotEquipped=Salbac Shield",
 					},
 					["ShieldWall"] = {
