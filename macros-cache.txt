@@ -10,6 +10,12 @@ END
 MACRO 4 "Cleave" Ability_Warrior_Cleave
 /lazyscript Cleave
 END
+MACRO 12 "OM" Ability_Whirlwind
+/lazyscript OffensiveMulti
+END
+MACRO 11 "OS" Ability_Warrior_Sunder
+/lazyscript OffensiveSingle
+END
 MACRO 10 "Retaliation" Ability_Warrior_Challange
 /lazyscript Retaliation
 END
