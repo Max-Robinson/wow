@@ -10,6 +10,9 @@ END
 MACRO 4 "Cleave" Ability_Warrior_Cleave
 /lazyscript Cleave
 END
+MACRO 13 "DM" Spell_Nature_ThunderClap
+/lazyscript DefensiveMulti
+END
 MACRO 12 "OM" Ability_Whirlwind
 /lazyscript OffensiveMulti
 END
