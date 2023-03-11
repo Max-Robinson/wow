@@ -13,6 +13,9 @@ END
 MACRO 13 "DM" Spell_Nature_ThunderClap
 /lazyscript DefensiveMulti
 END
+MACRO 14 "DS" Ability_Defend
+/lazyscript DefensiveSingle
+END
 MACRO 12 "OM" Ability_Whirlwind
 /lazyscript OffensiveMulti
 END
