@@ -1,8 +1,17 @@
 MACRO 7 "Bandage" Spell_Holy_SealOfSacrifice
 /lazyscript Bandage
 END
+MACRO 19 "BoMO" Spell_Holy_FistOfJustice
+/lazyscript BoMOther
+END
+MACRO 17 "BoMS" Spell_Holy_FistOfJustice
+/lazyscript BoMSelf
+END
 MACRO 9 "Buff" Spell_Nature_Strength
 /lazyscript Buff
+END
+MACRO 16 "CC" Spell_Holy_DevotionAura
+/lazyscript CombatCheck
 END
 MACRO 8 "Charge" Ability_Warrior_Charge
 /lazyscript ChargeIntercept
@@ -10,11 +19,20 @@ END
 MACRO 4 "Cleave" Ability_Warrior_Cleave
 /lazyscript Cleave
 END
+MACRO 21 "Combat" Ability_ThunderBolt
+/lazyscript SoRCombat
+END
 MACRO 13 "DM" Spell_Nature_ThunderClap
 /lazyscript DefensiveMulti
 END
 MACRO 14 "DS" Ability_Defend
 /lazyscript DefensiveSingle
+END
+MACRO 18 "HLO" Spell_Holy_HolyBolt
+/lazyscript HolyLightOther
+END
+MACRO 15 "HLS" Spell_Holy_HolyBolt
+/lazyscript HolyLightSelf
 END
 MACRO 12 "OM" Ability_Whirlwind
 /lazyscript OffensiveMulti
