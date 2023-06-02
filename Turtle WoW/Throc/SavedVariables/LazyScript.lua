@@ -18,7 +18,7 @@ lsConf = {
 			["Throc"] = {
 				["clearHistoryAfterCombat"] = false,
 				["initiateAutoAttack"] = true,
-				["mmIsVisible"] = true,
+				["showTargetCasts"] = false,
 				["minionIsVisible"] = true,
 				["showReasonForTargetCCd"] = false,
 				["BoundFormsTable"] = {
@@ -27,6 +27,9 @@ lsConf = {
 				["loadedDefaultForms"] = true,
 				["debug"] = false,
 				["healthHistorySize"] = 5,
+				["Immunities"] = {
+				},
+				["useImmunities"] = true,
 				["forms"] = {
 					["BoMSelf"] = {
 						[1] = "blessMight@self",
@@ -72,24 +75,21 @@ lsConf = {
 						[2] = "holyLight(rank1)-ifNotTargetFlaggedPVP-ifTarget>51hpDeficit-ifPlayer<60mana-ifPlayer>35mana",
 						[3] = "holyLight(rank1)-ifNotTargetFlaggedPVP-ifTarget<51hpDeficit-ifPlayer>35mana",
 					},
+					["BoMOther"] = {
+						[1] = "blessMight-ifNotTargetFlaggedPVP",
+					},
 					["HolyLightSelf"] = {
 						[1] = "holyLight(rank2)@self-ifPlayer>51hpDeficit-ifPlayer>60mana",
 						[2] = "holyLight(rank1)@self-ifPlayer>51hpDeficit-ifPlayer<60mana-ifPlayer>35mana",
 						[3] = "holyLight(rank1)@self-ifPlayer<51hpDeficit-ifPlayer>35mana",
 					},
-					["BoMOther"] = {
-						[1] = "blessMight-ifNotTargetFlaggedPVP",
-					},
-				},
-				["useImmunities"] = true,
-				["Immunities"] = {
 				},
 				["autoTarget"] = true,
 				["deathMinionIsVisible"] = false,
-				["showActionAlways"] = true,
-				["minionHidesOutOfCombat"] = false,
+				["mmIsVisible"] = true,
 				["minimapButtonPos"] = 335.8729542543206,
-				["showTargetCasts"] = false,
+				["minionHidesOutOfCombat"] = false,
+				["showActionAlways"] = true,
 				["showGankMessage"] = false,
 			},
 		},

@@ -18,7 +18,7 @@ lsConf = {
 			["Galilea"] = {
 				["clearHistoryAfterCombat"] = false,
 				["initiateAutoAttack"] = true,
-				["showTargetCasts"] = false,
+				["showActionAlways"] = true,
 				["minionIsVisible"] = true,
 				["showReasonForTargetCCd"] = false,
 				["BoundFormsTable"] = {
@@ -27,6 +27,15 @@ lsConf = {
 				["loadedDefaultForms"] = true,
 				["debug"] = false,
 				["healthHistorySize"] = 5,
+				["Immunities"] = {
+				},
+				["showGankMessage"] = false,
+				["showTargetCasts"] = false,
+				["autoTarget"] = true,
+				["deathMinionIsVisible"] = false,
+				["minimapButtonPos"] = 0,
+				["minionHidesOutOfCombat"] = false,
+				["mmIsVisible"] = true,
 				["forms"] = {
 					["Shoot"] = {
 						[1] = "callForm=OhShit",
@@ -86,15 +95,6 @@ lsConf = {
 						[22] = "#fearWard@partypet3-ifNotPartypet3HasBuff=fearWard",
 						[23] = "#fearWard@partypet4-ifNotPartypet4HasBuff=fearWard",
 					},
-				},
-				["showGankMessage"] = false,
-				["mmIsVisible"] = true,
-				["autoTarget"] = true,
-				["deathMinionIsVisible"] = false,
-				["minionHidesOutOfCombat"] = false,
-				["minimapButtonPos"] = 0,
-				["showActionAlways"] = true,
-				["Immunities"] = {
 				},
 				["useImmunities"] = true,
 			},
