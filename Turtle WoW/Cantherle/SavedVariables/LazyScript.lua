@@ -212,7 +212,7 @@ lsConf = {
 					["EquipShield"] = {
 						[1] = "# If holding two-handed weapon, and try to equip shield, it will fail.",
 						[2] = "# Must first equip one-handed weapon, then can equip shield.",
-						[3] = "equipMainHand=-ifNotEquipped=Vanquisher's Sword",
+						[3] = "equipMainHand=Vanquisher's Sword-ifNotEquipped=Vanquisher's Sword",
 						[4] = "equipOffHand=Rockshard Guard-echo=Equipping shield-ifNotEquipped=Rockshard Guard",
 					},
 					["Hamstring"] = {
